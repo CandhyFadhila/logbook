@@ -17,7 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [pagesController::class, 'masterdb']);
+Route::get('/home', [pagesController::class, 'masterdb']);
 
 // Admin
 Route::get('/lapor', [AdminController::class, 'index']);
