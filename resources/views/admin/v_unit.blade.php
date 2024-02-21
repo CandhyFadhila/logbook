@@ -24,10 +24,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i = 0 ?>
                             @foreach ($unit as $a)
 
                             <tr>
-                                <td>1</td>
+                                <td>{{ ++$i }}</td>
                                 <td>{{$a->kode}}</td>
                                 <td>{{$a->unit}}</td>
                                 <td>

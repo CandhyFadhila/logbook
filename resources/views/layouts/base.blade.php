@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TVKU</title>
+    <title>TVKU Semarang</title>
 
 
 
@@ -145,7 +145,7 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item  ">
+                <li class="sidebar-item">
                     <a href="/home" class='sidebar-link' @yield('dashboard')>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard Admin</span>

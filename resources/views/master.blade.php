@@ -4,7 +4,7 @@
 
 
 @if (Auth::user()->role == 'Admin')
-<div class="page-content"> 
+<div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">
@@ -21,12 +21,12 @@
                                     <h6 class="text-muted font-semibold">User</h6>
                                     <h6 class="font-extrabold mb-0">{{$usercount}}</h6>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3 col-md-6">
-                    <div class="card"> 
+                    <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
                                 <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
@@ -72,7 +72,7 @@
                                     <h6 class="text-muted font-semibold">Selesai</h6>
                                     <h6 class="font-extrabold mb-0">{{$doneCount}}</h6>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                                     <h6 class="text-muted font-semibold">Total Laporan</h6>
                                     <h6 class="font-extrabold mb-0">{{$total}}</h6>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <section class="section">
@@ -154,11 +154,15 @@
                                 <td>{{$a->status}}</td>
                                 <td>{{$a->user->name}}</td>
                                 <td>
-                                    <a href="/tambah/edit/{{$a->id}}" type="button" class="btn btn-primary me-1 mb-1">Edit</a>
-                                    <a href="#" onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus?')) { document.getElementById('delete-form-{{ $a->id }}').submit(); }" type="button" class="btn btn-danger">
+                                    <a href="/tambah/edit/{{$a->id}}" type="button"
+                                        class="btn btn-primary me-1 mb-1">Edit</a>
+                                    <a href="#"
+                                        onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus?')) { document.getElementById('delete-form-{{ $a->id }}').submit(); }"
+                                        type="button" class="btn btn-danger">
                                         Delete
                                     </a>
-                                    <form id="delete-form-{{ $a->id }}" action="/tambah/delete/{{ $a->id }}" method="POST" style="display: none;">
+                                    <form id="delete-form-{{ $a->id }}" action="/tambah/delete/{{ $a->id }}"
+                                        method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                     </form>
@@ -173,8 +177,10 @@
 
     </section>
 </div>
+
+{{-- ! BUG User || user --}}
 @elseif (Auth::user()->role == 'user')
-<div class="page-content"> 
+<div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">
@@ -191,12 +197,12 @@
                                     <h6 class="text-muted font-semibold">Laporan Baru</h6>
                                     <h6 class="font-extrabold mb-0">{{$newCount}}</h6>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3 col-md-6">
-                    <div class="card"> 
+                    <div class="card">
                         <div class="card-body px-4 py-4-5">
                             <div class="row">
                                 <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
@@ -229,14 +235,14 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Grafik Laporan</h4>
-                            
+
                         </div>
                         <div class="card-body">
                             <div class="p-6 m-20 bg-white rounded shadow">
@@ -289,11 +295,15 @@
                                 <td>{{$a->status}}</td>
                                 <td>{{$a->user->name}}</td>
                                 <td>
-                                    <a href="/tambah/edit/{{$a->id}}" type="button" class="btn btn-primary me-1 mb-1">Edit</a>
-                                    <a href="#" onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus?')) { document.getElementById('delete-form-{{ $a->id }}').submit(); }" type="button" class="btn btn-danger">
+                                    <a href="/tambah/edit/{{$a->id}}" type="button"
+                                        class="btn btn-primary me-1 mb-1">Edit</a>
+                                    <a href="#"
+                                        onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus?')) { document.getElementById('delete-form-{{ $a->id }}').submit(); }"
+                                        type="button" class="btn btn-danger">
                                         Delete
                                     </a>
-                                    <form id="delete-form-{{ $a->id }}" action="/tambah/delete/{{ $a->id }}" method="POST" style="display: none;">
+                                    <form id="delete-form-{{ $a->id }}" action="/tambah/delete/{{ $a->id }}"
+                                        method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                     </form>
@@ -309,7 +319,7 @@
 </div>
 @endif
 
-    <script src="{{ $LogBookChart->cdn() }}"></script>
-    {{ $LogBookChart->script() }}
+<script src="{{ $LogBookChart->cdn() }}"></script>
+{{ $LogBookChart->script() }}
 
 @endsection
